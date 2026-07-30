@@ -1,8 +1,16 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ===========================
+   VARIABLES
+=========================== */
 
 :root{
     --verdeClaro: #50b4aa;
@@ -13,14 +21,26 @@
     --pastelOscuro: #e5d8ba;
 }
 
+/* ===========================
+   BODY
+=========================== */
+
+body{
+    background-color: var(--pastelClaro);
+    color: var(--verdeOscuro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 
 .navBar{
     display: flex;
-
     justify-content: space-between;
-    text-align: center;
-
-    padding: 20px;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: var(--blanco);
 }
 
 .navBar img{
@@ -28,215 +48,321 @@
 }
 
 .navBar ul{
-    list-style: none;
     display: flex;
     gap: 40px;
+    list-style: none;
 }
 
 .navBar a{
     text-decoration: none;
-    color: black;
+    color: var(--verdeOscuro);
+    transition: .3s;
 }
+
+.navBar a:hover{
+    color: var(--verdeClaro);
+}
+
+/* ===========================
+   HERO
+=========================== */
 
 .hero{
     display: flex;
-
-    padding: 40px;
-
     justify-content: space-around;
+    align-items: center;
+    padding: 60px;
+}
+
+.heroTxt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .hero h1{
-
     width: 450px;
+    font-size: 3rem;
 }
-.hero p {
-    width: 200px;
+
+.hero p{
+    width: 350px;
+    line-height: 1.6;
 }
 
 .heroImg{
     width: 350px;
 }
 
-
-.heroIput{
-
-    
-}
-#titleCatPopulares{
-
+.divHero{
     display: flex;
-
-    justify-content: center;
-
-    margin-bottom: 50px;
+    flex-direction: column;
+    gap: 20px;
 }
+
+.divHero input{
+    width: 350px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.hero a{
+    text-decoration: none;
+}
+
+#aHero1{
+    background-color: var(--verdeOscuro);
+    color: var(--blanco);
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+#aHero2{
+    border: 2px solid var(--verdeOscuro);
+    color: var(--verdeOscuro);
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+/* ===========================
+   TITULOS
+=========================== */
+
+#titleCatPopulares,
+#titleDestacados,
+#titleComoFunciona,
+#titleResenas{
+    text-align: center;
+    margin: 60px 0;
+    font-size: 2rem;
+}
+/* ===========================
+   CATEGORÍAS
+=========================== */
 
 .cardContainer{
-
-
     display: grid;
-
-    grid-template-columns:  auto auto auto auto;
-
+    grid-template-columns: repeat(4, auto);
     justify-content: space-evenly;
-
     gap: 40px;
-    
+    padding: 0 40px;
 }
-
 
 .card{
-    background-color: rgb(132, 125, 125);
+    width: 260px;
+    height: 220px;
 
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
+    background-color: var(--blanco);
+    border-radius: 20px;
     padding: 30px;
 
-    border-radius: 25px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
+    gap: 15px;
 
-    
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+
+    transition: .3s;
 }
 
+.card:hover{
+    transform: translateY(-6px);
+}
+
+.card i{
+    font-size: 45px;
+    color: var(--verdeClaro);
+}
+
+.card h2{
+    margin: 0;
+}
+
+.card p{
+    line-height: 1.5;
+}
+
+/* ===========================
+   DESTACADOS
+=========================== */
 
 .destacados{
-    
-
-    height: 50vh;
-}
-
-#titleDestacados{
-
-    display: flex;
-
-    justify-content: center;
-
-    margin: 50px;
+    padding: 60px 0;
 }
 
 .cardDestacadosContainer{
     display: grid;
-
-    grid-template-columns:  auto auto auto;
-
+    grid-template-columns: repeat(3, auto);
     justify-content: space-evenly;
 }
 
 .cardDestacado{
-    background-color: #393636;
 
-     box-shadow: 0 4px 6px -1px rgba(53, 51, 51, 0.1), 
-                0 2px 4px -1px rgba(55, 54, 54, 0.06);
+    width: 400px;
+    height: 380px;
 
+    background-color: var(--blanco);
+    color: black;
 
-    padding: 40px;
-
-    border-radius: 25px;
+    padding: 20px;
+    border-radius: 20px;
 
     display: flex;
-
     flex-direction: column;
+    gap: 12px;
 
-    justify-content: flex-start;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+
+    transition: .3s;
 }
 
+.cardDestacado:hover{
+    transform: translateY(-6px);
+}
 
+.cardDestacado img{
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.cardDestacado h2{
+    margin-top: 5px;
+}
+
+.cardDestacado button{
+    margin-top: auto;
+
+    background-color: var(--verdeOscuro);
+    color: var(--blanco);
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cardDestacado button:hover{
+    background-color: var(--verdeMedio);
+}
+
+/* ===========================
+   COMO FUNCIONA
+=========================== */
 
 .comoFunciona{
-    height: 50vh;
-}
-
-
-#titleComoFunciona{
-    display: flex;
-
-    justify-content: center;
-
-    margin: 50px;
+    padding: 60px 0;
 }
 
 .cardComoFuncionaContainer{
     display: grid;
-
-    grid-template-columns: auto auto auto auto;
-
+    grid-template-columns: repeat(4, auto);
     justify-content: space-evenly;
 }
 
 .cardComoFunciona{
-    background-color: #393636;
 
-    padding: 40px;
+    width: 280px;
+    height: 280px;
 
-    border-radius: 30px;
+    background-color: var(--blanco);
+    color: black;
 
-         box-shadow: 0 4px 6px -1px rgba(53, 51, 51, 0.1), 
-                0 2px 4px -1px rgba(55, 54, 54, 0.06);
+    padding: 30px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+
+    transition: .3s;
 }
 
+.cardComoFunciona:hover{
+    transform: translateY(-6px);
+}
+
+.cardComoFunciona img{
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.cardComoFunciona h2{
+    margin: 0;
+}
+
+.cardComoFunciona p{
+    line-height: 1.5;
+}
+
+/* ===========================
+   RESEÑAS
+=========================== */
 
 .reseñas{
-    background-color: red;
-
-    height: 70vh;
-
-    padding: 40px;
-}
-
-
-#titleReseñas{
-    display: flex;
-
     
-
-    justify-content: center;
-
-    margin: 50px;    
+    padding: 70px 40px;
 }
-
 
 .reseñasCardContainer{
-
     display: grid;
-
-    grid-template-columns:  auto auto auto;
-
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-evenly;
     gap: 40px;
-
-} 
+}
 
 .cardReseña{
 
+    width: 340px;
+    height: 220px;
+
+    background-color: var(--blanco);
+
+    padding: 30px;
+    border-radius: 20px;
+
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    flex-direction: column;   
-      box-shadow: 0 4px 6px -1px rgba(53, 51, 51, 0.1),
-                0 2px 4px -1px rgba(55, 54, 54, 0.06);
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
 
-
-    background-color: blue;
-
-    padding: 40px;
-
-
+    transition: .3s;
 }
 
+.cardReseña:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
 
 .cardReseña p{
-
-    width: 300px;
+    line-height: 1.6;
 }
 
-
-.footer{
-    background-color: var(--verdeOscuro);
+.cardReseña p:first-child{
+    font-style: italic;
 }
 
+.cardReseña p:last-child{
+    font-weight: bold;
+    color: var(--verdeOscuro);
+}
